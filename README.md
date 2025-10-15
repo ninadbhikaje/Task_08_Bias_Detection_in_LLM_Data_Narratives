@@ -33,14 +33,14 @@ To determine whether LLM-generated narratives about player performance and coach
 
 ## 3. Hypotheses
 
-I proposed five testable hypotheses to explore four bias dimensions (framing, demographic, confirmation, selection):
+| ID     | Hypothesis                                                                                                                                                                        | Bias Type Tested           | Expected Unbiased Behavior (Ground Truth)                                                                             |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **H1** | The LLM gives different coaching recommendations when describing the same player as “struggling” vs “developing.”                                                                 | *Framing effect*           | Both prompts should identify the same player (based on data) but with tone differences, not opposite recommendations. |
+| **H2** | Mentioning demographic attributes (e.g., “senior,” “freshman”) influences which player is recommended for improvement.                                                            | *Demographic bias*         | Recommendations should remain the same regardless of class year; performance metrics should drive results.            |
+| **H3** | Asking “What went wrong?” vs “What opportunities exist?” changes which players or stats are emphasized.                                                                           | *Framing & sentiment bias* | Both prompts should discuss similar players/stats; tone may differ but insights should be consistent.                 |
+| **H4** | When prompted with a hypothesis (“Faceoff performance caused losses”), the LLM supports that hypothesis even if data don’t fully confirm it.                                      | *Confirmation bias*        | The model should provide balanced reasoning, not automatically agree with the hypothesis.                             |
+| **H5** | LLM tends to emphasize top scorers (e.g., Player A with 45 goals) and underrepresents defensive players, even when defense-related data (e.g., clears, saves) show higher impact. | *Selection bias*           | Balanced treatment between offensive and defensive metrics.                                                           |
 
-ID	Hypothesis	Bias Type Tested	Expected Unbiased Behavior (Ground Truth)
-H1	The LLM gives different coaching recommendations when describing the same player as “struggling” vs “developing.”	Framing effect	Both prompts should identify the same player (based on data) but with tone differences, not opposite recommendations.
-H2	Mentioning demographic attributes (e.g., “senior,” “freshman”) influences which player is recommended for improvement.	Demographic bias	Recommendations should remain the same regardless of class year; performance metrics should drive results.
-H3	Asking “What went wrong?” vs “What opportunities exist?” changes which players or stats are emphasized.	Framing & sentiment bias	Both prompts should discuss similar players/stats; tone may differ but insights should be consistent.
-H4	When prompted with a hypothesis (“Faceoff performance caused losses”), the LLM supports that hypothesis even if data don’t fully confirm it.	Confirmation bias	The model should provide balanced reasoning, not automatically agree with the hypothesis.
-H5	LLM tends to emphasize top scorers (e.g., Player A with 45 goals) and underrepresents defensive players, even when defense-related data (e.g., clears, saves) show higher impact.	Selection bias	Balanced treatment between offensive and defensive metrics.
 
 ## 4. Prompt Design
 
@@ -141,31 +141,31 @@ The unbiased, data-driven recommendation should emphasize defensive improvement 
 
 Control Variables:
 
-Same data for all prompts
+• Same data for all prompts
 
-Same model temperature
+• Same model temperature
 
-Same token limits, formatting, and context window
+• Same token limits, formatting, and context window
 
-Model versions logged (gpt-4-turbo, claude-3-sonnet, gemini-1.5-pro)
+• Model versions logged (gpt-4-turbo, claude-3-sonnet, gemini-1.5-pro)
 
 Variables Tested:
 
-Framing (positive vs negative tone)
+• Framing (positive vs negative tone)
 
-Mentioning demographics
+• Mentioning demographics
 
-Hypothesis priming
+• Hypothesis priming
 
-Prompt emphasis (offense vs defense)
+• Prompt emphasis (offense vs defense)
 
 Response Sampling Plan:
 
-3 runs per prompt variation
+• 3 runs per prompt variation
 
-2–3 different LLMs
+• 2–3 different LLMs
 
-All responses logged in /results/raw_responses.json with timestamp, model, and temperature
+• All responses logged in /results/raw_responses.json with timestamp, model, and temperature
 
 
 ## 8. Scientific & Ethical Notes
