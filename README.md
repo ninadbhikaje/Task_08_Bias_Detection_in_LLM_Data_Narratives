@@ -195,6 +195,7 @@ To systematically collect and log LLM-generated responses to the five experiment
 Each response tests whether model outputs change meaningfully under different framings or contextual cues, while keeping statistical data constant.
 
 2. LLM Models Queried
+
 | Model           | Version   | Access Method | Temperature | Max Tokens | Notes                                 |
 | --------------- | --------- | ------------- | ----------- | ---------- | ------------------------------------- |
 | GPT-4-Turbo     | Oct 2025  | OpenAI API    | 0.3         | 1000       | Baseline, balanced reasoning          |
