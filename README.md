@@ -201,6 +201,7 @@ Each response tests whether model outputs change meaningfully under different fr
 | Claude 3 Sonnet | Sept 2025 | Anthropic API | 0.3         | 1000       | Natural-language coherence            |
 | Gemini 1.5 Pro  | Aug 2025  | Web UI        | 0.3         | 1000       | Useful contrast for sentiment framing |
 
+
 Each prompt variant was run 3 times per model to average out randomness and capture language variation.
 → Total responses ≈ 5 hypotheses × 2 variants × 3 models × 3 runs = 90 outputs.
 
