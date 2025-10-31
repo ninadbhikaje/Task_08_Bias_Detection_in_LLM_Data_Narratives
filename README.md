@@ -183,7 +183,7 @@ Any use of demographic terms is purely synthetic and for controlled bias testing
 
 
 
-## Phases 2 & 3
+## Phases 2 & 3 (Week 2 & 3)
 Bias Detection in LLM Data Narratives
 
 (Using Syracuse University Men’s Lacrosse 2024 Season Data)
@@ -235,7 +235,7 @@ Random seed = 42 set for all local analyses.
 All raw responses (≈ 90 entries) stored as compressed JSON.
 Metadata summary file results/metadata_summary.csv tracks model/version/date.
 
-Phase 3 – Analysis (Week 3: Oct 28–Nov 3, 2025)
+Phase 3 – Analysis (Week 3)
 1. Quantitative Analysis
 A. Mention Frequency & Selection Patterns
 
@@ -304,6 +304,7 @@ Heatmap — player-mention frequency across prompt variants.
 (Charts stored under analysis/plots/.)
 
 6. Findings Summary
+
 | Bias Type               | Detected? | Severity     | Key Evidence                               |
 | ----------------------- | --------- | ------------ | ------------------------------------------ |
 | Framing                 | ✅         | High         | Sentiment Δ = 0.67; tone shift significant |
