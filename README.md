@@ -335,9 +335,9 @@ Deliverable Summary
 | Documentation & plots            | Done   | Saved in `analysis/` directory                  |
 
 
-## Phase 4 (Week 4)
+# Phase 4 (Week 4)
 
-# Purpose of This Project
+## Purpose of This Project
 
 This research investigates whether Large Language Models (LLMs) produce biased narratives when analyzing identical numeric data under different prompt framings.
 
@@ -346,7 +346,7 @@ The experiment uses anonymized statistics from the 2024 Syracuse University Menâ
 This repository contains all code, prompts, scripts, and reports needed for full reproducibility.
 
 
-# How to Reproduce Experiments
+## How to Reproduce Experiments
 1. Install Dependencies
 pip install pandas numpy matplotlib seaborn scipy nltk
 pip install openai anthropic google-generativeai   # Optional
