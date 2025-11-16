@@ -335,3 +335,121 @@ Deliverable Summary
 | Documentation & plots            | Done   | Saved in `analysis/` directory                  |
 
 
+## Phase 4 (Week 4)
+
+# Purpose of This Project
+
+This research investigates whether Large Language Models (LLMs) produce biased narratives when analyzing identical numeric data under different prompt framings.
+
+The experiment uses anonymized statistics from the 2024 Syracuse University Men’s Lacrosse team and tests how LLMs respond when tone, demographics, or hypothesis priming is altered.
+
+This repository contains all code, prompts, scripts, and reports needed for full reproducibility.
+
+
+# How to Reproduce Experiments
+1. Install Dependencies
+pip install pandas numpy matplotlib seaborn scipy nltk
+pip install openai anthropic google-generativeai   # Optional
+
+
+Download VADER lexicon (first run does this automatically):
+
+import nltk
+nltk.download("vader_lexicon")
+
+2. Generate Prompt Variants
+python experiment_design.py --force
+
+
+This populates the prompts/ folder with:
+
+H1_negative.txt
+
+H1_positive.txt
+
+H2_neutral.txt
+
+H2_demo.txt
+
+H3_negative.txt
+
+H3_positive.txt
+
+H4_neutral.txt
+
+H4_hypothesis.txt
+
+H5_general.txt
+
+H5_defense_cued.txt
+
+
+3. Run Experiments (LLM Querying)
+
+Mock model (no API keys needed):
+
+python run_experiment.py --models mock --runs 3
+
+
+Using real models:
+
+export OPENAI_API_KEY="sk-..."
+export ANTHROPIC_API_KEY="sk-ant-..."
+python run_experiment.py --models openai anthropic --runs 3
+
+
+Outputs are saved to:
+
+results/raw_responses.jsonl
+
+
+4. Analyze Bias Patterns
+
+python analyze_bias.py --results results/raw_responses.jsonl --outdir analysis
+
+
+This generates:
+
+Sentiment charts
+
+Player-mention heatmap
+
+Focus distribution
+
+Statistical tests
+
+Processed summaries
+
+
+5. Validate Claims Against Ground Truth
+
+
+python validate_claims.py --results results/raw_responses.jsonl
+
+
+This flags hallucinations and incorrect numeric claims.
+
+
+6. Read Final Report
+
+My full bias analysis report (Phase 4):
+
+REPORT.md
+
+
+This includes:
+
+Executive summary
+
+Methods
+
+Bias detection findings
+
+Ethical analysis
+
+Mitigation strategy
+
+
+Author
+Ninad Bhikaje
+For Syracuse University Research Task 8 – Fall 2025
